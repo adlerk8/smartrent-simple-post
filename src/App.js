@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from "./components/Header/Header";
+import CreatePost from "./components/CreatePost/CreatePost";
+import Post from "./components/Post/Post";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [postList, setPostList] = useState([]);
+
+  const onSubmit = (content) => {
+    const newPost = [...postList, content];
+    setPostList(newPost);
+  }
+
+  const newPost = postList.map((post, index) => {
+      return (
+        <Post post={post} key={index}></Post>
+      )
+    })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header className="Header"/>
+      <CreatePost onSubmit={onSubmit} className="CreatePostDiv"/>
+      <div>
+        <ol>{newPost}</ol>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

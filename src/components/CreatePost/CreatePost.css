@@ -1,0 +1,12 @@
+.postBox {
+    height: 200px;
+    width: 150px;
+    background-color: white;
+    padding: 10px;
+}
+
+.postButton {
+    height: 15px;
+    width: 20px;
+    font-size: 12px;
+}
