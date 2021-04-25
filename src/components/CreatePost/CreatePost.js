@@ -4,24 +4,27 @@ import "./CreatePost.css";
 const CreatePost = (props) => {
     const [content, setContent] = useState('');
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         props.onSubmit(content);
         setContent('');
     }
 
     return (
-        <div className="postBox">
-            <input
-                type="text"
-                className="inputField"
-                placeholder="What's on your mind?"
-                value={content}
-                onChange={e => setContent(e.target.value)}
-            />
-            <button type="submit" onClick={handleSubmit} className="postButton">
-                Post
-            </button>
-        </div>
+        <form onSubmit={e=> handleSubmit(e)}>
+            <div className="postBox">
+                <input
+                    type="text"
+                    className="inputField"
+                    placeholder="What's on your mind?"
+                    value={content}
+                    onChange={e => setContent(e.target.value)}
+                />
+                <button onClick={e => handleSubmit(e)} className="postButton">
+                    Post
+                </button>
+            </div>
+        </form>
     );
 }
 
