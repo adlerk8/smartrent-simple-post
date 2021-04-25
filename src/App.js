@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header className="Header"/>
+      <Header/>
       <CreatePost onSubmit={onSubmit} className="CreatePostDiv"/>
       <div>
         <ol>{newPost}</ol>

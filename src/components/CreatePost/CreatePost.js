@@ -13,6 +13,7 @@ const CreatePost = (props) => {
         <div className="postBox">
             <input
                 type="text"
+                className="inputField"
                 placeholder="What's on your mind?"
                 value={content}
                 onChange={e => setContent(e.target.value)}
