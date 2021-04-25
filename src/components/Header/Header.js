@@ -3,7 +3,7 @@ import "./Header.css";
 const Header = () => {
     return (
         <h1 className="siteTitle" alt="website header">
-            FakeBook
+            Fakebook
         </h1>
     );
 }

@@ -1,3 +1,6 @@
 .siteTitle {
     color: black;
+    font-size: 32px;
+    font-weight: bold;
+    padding: 15px 0px 15px 10px;
 }
