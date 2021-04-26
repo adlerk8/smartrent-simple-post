@@ -12,11 +12,18 @@ const App = () => {
     setPostList(newPost);
   }
 
+  const onDelete = (clickedIndex) => {
+    const deletePost = postList.filter((post, index) => {
+      return index !== clickedIndex
+    });
+    setPostList(deletePost);
+  }
+
   const newPost = postList.map((post, index) => {
       return (
-        <Post post={post} key={index}></Post>
+        <Post post={post} key={index} index={index} deletePost={onDelete}></Post>
       )
-    })
+    });
 
   return (
     <div className="App">

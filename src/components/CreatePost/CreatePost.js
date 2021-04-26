@@ -6,8 +6,10 @@ const CreatePost = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.onSubmit(content);
-        setContent('');
+        if (content !== '') {
+            props.onSubmit(content);
+            setContent('');
+        };
     }
 
     return (
@@ -20,7 +22,7 @@ const CreatePost = (props) => {
                     value={content}
                     onChange={e => setContent(e.target.value)}
                 />
-                <button onClick={e => handleSubmit(e)} className="postButton">
+                <button type="submit" className="postButton">
                     Post
                 </button>
             </div>

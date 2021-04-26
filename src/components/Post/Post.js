@@ -2,7 +2,10 @@ import "./Post.css";
 
 const Post = (props) => {
     return (
-        <li className="singlePost">{props.post}</li>
+        <div>
+            <li className="singlePost">{props.post}</li>
+            <button onClick={() => props.deletePost(props.index)}>X</button>
+        </div>
     );
 }
 
